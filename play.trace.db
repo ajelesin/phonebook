@@ -1,0 +1,3 @@
+04-27 10:27:58 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "CONTACTS" not found; SQL statement:
+select * from contacts [42102-168]

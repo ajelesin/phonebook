@@ -1,0 +1,13 @@
+@(contacts: List[Contact], findForm: Form[String])
+
+@main("Результаты поиска") {
+
+    @findContact(findForm)
+
+    <h2>Результаты поиска</h2>
+    Найдено @contacts.size контакт(ов)
+    <br/>
+    <br/>
+
+    @contactList(contacts)
+}

@@ -1,0 +1,13 @@
+@(contacts: List[Contact])
+@import helper._
+
+@for(contact <- contacts) {
+    <div style="display:inline-block;">
+        <b>ФИО</b>: @contact.name<br/>
+        <b>Телефон</b>: @contact.phone<br/>
+    </div>
+    @form(routes.Application.delete(contact.id)){
+        <input type="submit" value="Удалить" onclick="return confirm('Удалить?');">
+    }
+    <hr/>
+}

@@ -1,0 +1,30 @@
+@(newContactForm: Form[(String, String)])
+@import helper._
+
+@main("Добавить контакт"){
+    <h2>Добавить контакт</h2>
+
+    @form(routes.Application.save()){
+        <div style="display:inline-block;">
+            @inputText(newContactForm("name"),
+                'id -> "text-new-name",
+                'placeholder -> "ФИО",
+                '_label -> null)
+            @inputText(newContactForm("phone"),
+                'id -> "text-new-phone",
+                'placeholder -> "Телефон",
+                '_label -> null)
+        </div>
+        @if(newContactForm.hasGlobalErrors){
+            <br/>
+            <ul class="error">
+                @for(error <- newContactForm.globalErrors){
+                <li>@error.message</li>
+                }
+            </ul>
+            <br/>
+        }
+        <input type="submit" value="Сохранить">
+    }
+}
+

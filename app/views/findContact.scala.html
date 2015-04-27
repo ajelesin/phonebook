@@ -1,0 +1,12 @@
+@(findForm: Form[String])
+@import helper._
+
+@form(routes.Application.find()){
+    <div style="display:inline-block;">
+        @inputText(findForm("name"),
+                    'id -> "text-find-by-name",
+                    'placeholder -> "Введите ФИО для поиска",
+                    '_label -> null)
+    </div>
+    <input type="submit" value="Искать">
+}
